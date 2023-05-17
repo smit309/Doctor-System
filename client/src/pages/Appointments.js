@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Layout from "./../components/Layout";
 import moment from "moment";
-import { Table } from "antd";
+import { Table, Typography } from "antd";
+
+const { Title } = Typography;
 
 const Appointments = () => {
   const [appointments, setAppointments] = useState([]);
@@ -64,7 +66,17 @@ const Appointments = () => {
   return (
     <Layout>
       <div className="appointments-page">
-        <h1 className="appointments-title">Appointments List</h1>
+        <Title
+          level={2}
+          style={{
+            textAlign: "center",
+            marginBottom: "50px",
+            fontWeight: "bold",
+            fontSize: "32px",
+          }}
+        >
+          Appointments List
+        </Title>{" "}
         <Table
           columns={columns}
           dataSource={appointments}
@@ -75,7 +87,7 @@ const Appointments = () => {
       </div>
       <style jsx>{`
         .appointments-page {
-          background-color: #282c34;
+          background-color: #ffffff;
           padding: 50px 20px;
           color: white;
         }

@@ -4,7 +4,9 @@ import Layout from "./../../components/Layout";
 import axios from "axios";
 
 import moment from "moment";
-import { message, Table } from "antd";
+import { message, Table, Typography } from "antd";
+
+const { Title } = Typography;
 
 const DoctorAppointments = () => {
   const [appointments, setAppointments] = useState([]);
@@ -95,7 +97,17 @@ const DoctorAppointments = () => {
   ];
   return (
     <Layout>
-      <h1>Appointment Lists</h1>
+      <Title
+        level={2}
+        style={{
+          textAlign: "center",
+          marginBottom: "50px",
+          fontWeight: "bold",
+          fontSize: "32px",
+        }}
+      >
+        Appointment List
+      </Title>{" "}
       <Table columns={columns} dataSource={appointments} />
     </Layout>
   );

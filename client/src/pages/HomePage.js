@@ -33,7 +33,15 @@ const HomePage = () => {
   return (
     <Layout>
       <div style={{ padding: "20px" }}>
-        <Title level={2} style={{ textAlign: "center", marginBottom: "50px" }}>
+        <Title
+          level={2}
+          style={{
+            textAlign: "center",
+            marginBottom: "50px",
+            fontWeight: "bold",
+            fontSize: "32px",
+          }}
+        >
           Doctor List
         </Title>
         <Row gutter={[16, 16]}>

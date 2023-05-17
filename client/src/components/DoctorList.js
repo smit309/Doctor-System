@@ -11,20 +11,25 @@ const DoctorList = ({ doctor }) => {
         onClick={() => navigate(`/doctor/book-appointment/${doctor._id}`)}
       >
         <div className="card-header">
-          Dr. {doctor.firstName} {doctor.lastName}
+          Dr.{" "}
+          {doctor.firstName &&
+            doctor.firstName.charAt(0).toUpperCase() +
+              doctor.firstName.slice(1)}{" "}
+          {doctor.lastName &&
+            doctor.lastName.charAt(0).toUpperCase() + doctor.lastName.slice(1)}
         </div>
         <div className="card-body">
           <p>
-            <b>Specialization</b> {doctor.specialization}
+            <b>Specialization :</b> {doctor.specialization}
           </p>
           <p>
-            <b>Experience</b> {doctor.experience}
+            <b>Experience :</b> {doctor.experience}
           </p>
           <p>
-            <b>Fees Per Consultation</b> {doctor.feesPerConsultation}
+            <b>Fees Per Consultation :</b> {doctor.feesPerCunsaltation}
           </p>
           <p>
-            <b>Timings</b> {doctor.timings[0]} - {doctor.timings[1]}
+            <b>Timings :</b> {doctor.timings[0]} - {doctor.timings[1]}
           </p>
         </div>
       </div>

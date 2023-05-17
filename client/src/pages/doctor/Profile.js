@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import Layout from "./../../components/Layout";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
-import { Col, Form, Input, Row, TimePicker, message } from "antd";
+import { Col, Form, Input, Row, TimePicker, message, Typography } from "antd";
 import { useSelector, useDispatch } from "react-redux";
 import { showLoading, hideLoading } from "../../redux/features/alertSlice";
 import moment from "moment";
+
+const { Title } = Typography;
 
 const Profile = () => {
   const { user } = useSelector((state) => state.user);
@@ -75,7 +77,17 @@ const Profile = () => {
   }, []);
   return (
     <Layout>
-      <h1>Manage Profile</h1>
+      <Title
+        level={2}
+        style={{
+          textAlign: "center",
+          marginBottom: "50px",
+          fontWeight: "bold",
+          fontSize: "32px",
+        }}
+      >
+        Manage Profile
+      </Title>{" "}
       {doctor && (
         <Form
           layout="vertical"

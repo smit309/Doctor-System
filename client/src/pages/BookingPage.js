@@ -109,17 +109,34 @@ const BookingPage = () => {
           boxShadow: "0px 0px 5px rgba(0,0,0,0.1)",
         }}
       >
-        {doctors && (
+        {doctors && doctors.firstName && doctors.lastName && (
           <div className="card p-3">
-            <h4 className="card-title mb-3">
-              Dr. {doctors.firstName} {doctors.lastName}
+            <h4
+              className="card-title mb-3"
+              style={{
+                fontFamily: "Arial",
+                fontSize: "24px",
+                fontWeight: "bold",
+              }}
+            >
+              Dr.{" "}
+              {doctors.firstName.charAt(0).toUpperCase() +
+                doctors.firstName.slice(1)}{" "}
+              {doctors.lastName.charAt(0).toUpperCase() +
+                doctors.lastName.slice(1)}
             </h4>
-            <h5 className="card-subtitle mb-2 text-muted">
-              Fees : {doctors.feesPerCunsaltation}
+            <h5
+              className="card-subtitle mb-2 text-muted"
+              style={{ fontSize: "18px" }}
+            >
+              Fees: {doctors.feesPerCunsaltation}
             </h5>
             {doctors && doctors.timings && doctors.timings.length >= 2 && (
-              <h5 className="card-subtitle mb-4 text-muted">
-                Timings : {doctors.timings[0]} - {doctors.timings[1]}
+              <h5
+                className="card-subtitle mb-4 text-muted"
+                style={{ fontSize: "16px" }}
+              >
+                Timings: {doctors.timings[0]} - {doctors.timings[1]}
               </h5>
             )}
             <div className="d-flex flex-column align-items-center justify-content-center">
